@@ -3,7 +3,7 @@ const restricted = require('../auth/authenticate-middleware')
 const Jokes = require('../jokes/jokes-model');
 const router = require('express').Router();
 
-router.get('/', (req, res) => {
+router.get('/', restricted, (req, res) => {
   const requestOptions = {
     headers: { accept: 'application/json' },
   };
