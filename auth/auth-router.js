@@ -1,4 +1,6 @@
 const router = require('express').Router();
+const Jokes = require('../jokes/jokes-model');
+
 
 router.post('/register', (req, res) => {
   // implement registration
