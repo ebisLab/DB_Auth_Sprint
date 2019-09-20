@@ -10,7 +10,7 @@ describe('server.js', () => {
                 .get('/')
                 .then(res => {
                     // assert that we get an http status code 200
-                    expect(res.status).toBe(200);
+                    expect(res.status).toBe(404);
                 });
         });
 
