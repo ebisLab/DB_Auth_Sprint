@@ -36,17 +36,17 @@ router.post('/login', (req, res) => {
     });
 });
 
-function generateToken(user) {
-  const payload = {
-    username: user.username,
-  }
+// function generateToken(user) {
+//   const payload = {
+//     username: user.username,
+//   }
 
-  const options = {
-    //expiration of the token
-    expiresIn: '1d', //one day
-  }
-  return jwt.sign(payload, secrets.jwtSecret, options);
-}
+//   const options = {
+//     //expiration of the token
+//     expiresIn: '1d', //one day
+//   }
+//   return jwt.sign(payload, secrets.jwtSecret, options);
+// }
 
 
 module.exports = router;
