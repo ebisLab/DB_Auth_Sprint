@@ -5,11 +5,10 @@ const Jokes = require('../jokes/jokes-model');
 
 router.post('/register', (req, res) => {
   // implement registration
-  let user = req.body;
-  const hash = bcrypt.hashSync(user.password, 10); // 2 ^ n
-  user.password = hash;
+  let { username, password } = req.body;
+  const hash = bcrypt.hashSync(password, 10); // 2 ^ n
 
-  Jokes.add(user)
+  Jokes.add({ username, password: hash })
     .then(saved => {
       res.status(201).json(saved);
     })
